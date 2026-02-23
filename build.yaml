@@ -25,3 +25,4 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   - board: seeeduino_xiao_ble
     shield: totem_right
+    snippet: zmk-usb-logging
