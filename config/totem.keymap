@@ -78,8 +78,8 @@
 
             bindings = <
            &kp Q        &kp W  &kp E         &kp R         &kp T            &kp Y        &kp U               &kp I               &kp O    &kp P
-           &mt LCTRL A  &kp S  &kp D         &kp F         &kp G            &kp H        &kp J               &kp K               &kp L    &mt SEMICOLON SEMICOLON
-&kp LSHFT  &kp Z        &kp X  &kp C         &kp V         &kp B            &kp N        &kp M               &kp COMMA           &kp DOT  &kp FSLH                 &mt RSHFT DOUBLE_QUOTES
+           &mt LCTRL A  &kp S  &kp D         &kp F         &kp G            &kp H        &kp J               &kp K               &kp L    &mt RCTRL SEMICOLON
+&kp LSHFT  &kp Z        &kp X  &kp C         &kp V         &kp B            &kp N        &kp M               &kp COMMA           &kp DOT  &kp FSLH             &mt RSHFT DOUBLE_QUOTES
                                &mt LALT TAB  &mt LGUI TAB  &lt NAV SPACE    &lt SYM RET  &mt RGUI BACKSPACE  &mt LALT BACKSPACE
             >;
         };
