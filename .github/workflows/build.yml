@@ -4,3 +4,29 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+
+  draw:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer==0.23.0
+
+      - name: Generate keymap diagram
+        run: |
+          keymap parse -z config/totem.keymap > /tmp/totem.yaml
+          keymap draw --dts-layout boards/shields/totem/totem-layouts.dtsi /tmp/totem.yaml > keymap.svg
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: update keymap diagram [skip ci]"
+          file_pattern: keymap.svg
