@@ -23,7 +23,7 @@ jobs:
       - name: Generate keymap diagram
         run: |
           keymap parse -z config/totem.keymap > /tmp/totem.yaml
-          keymap draw --dts-layout boards/shields/totem/totem-layouts.dtsi /tmp/totem.yaml > keymap.svg
+          keymap draw  /tmp/totem.yaml > keymap.svg
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
